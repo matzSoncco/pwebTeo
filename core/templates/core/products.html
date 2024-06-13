@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<main class="px-3">
+    <section class="py-5 text-center">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-12 mx-auto">
+                <h1 class="fw-light">Listado de Productos</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-dark">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.get_type_id_display }}</p>
+                            <p class="card-text">${{ product.price }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                  <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-outline-secondary">View</a>
+                                    
+                                </div>
+                                <small class="text-muted">{{ product.created }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
