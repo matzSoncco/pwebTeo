@@ -1,0 +1,18 @@
+# Ignorar archivos de cache de Python
+*.pyc
+*~
+
+# Ignorar archivos de cache de Django
+__pycache__
+
+# Ignorar archivos de migraciones de Django
+core/migrations/
+core/models/__pycache__/
+core/static/core/css/
+core/static/core/images/
+core/static/core/js/
+core/templates/core/
+core/templates/registration/
+
+# Ignorar archivos de cache de tu proyecto principal
+proyecto/__pycache__/
